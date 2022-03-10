@@ -18,14 +18,15 @@ jobs:
         added: 'true'
         deleted: 'false'
         modified: 'true'
-        dirname: 'kubernetes'
       id: objects
     - name: Run conftest test against changed files
       uses: b4b4r07/action-conftest@master
       if: steps.objects.outputs.changed
       with:
+        path: 'kubernetes'
         files: ${{ steps.objects.outputs.changed }}
         policy: 'policy'
+        all-namespaces: true
       id: conftest
     - name: Post conftest command result to GitHub comment
       uses: b4b4r07/action-github-comment@master

@@ -26,6 +26,7 @@ jobs:
         files: ${{ steps.objects.outputs.changed }}
         policy: 'policy'
         all-namespaces: true
+        log-level: trace
       id: conftest
     - name: Post conftest command result to GitHub comment
       uses: b4b4r07/action-github-comment@master

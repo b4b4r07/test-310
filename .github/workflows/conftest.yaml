@@ -24,7 +24,8 @@ jobs:
       if: steps.objects.outputs.changed
       with:
         files: ${{ steps.objects.outputs.changed }}
-        matches: '*.yaml'
+        matches: 'kubernetes/*'
+        policy: ./policy
       id: conftest
     - name: Post conftest command result to GitHub comment
       uses: b4b4r07/action-github-comment@master

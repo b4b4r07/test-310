@@ -23,5 +23,3 @@ jobs:
       uses: YubicoLabs/action-conftest@v2
       with:
         files: ${{ steps.objects.outputs.changed }}
-        policy: ./policy
-        all-namespaces: true

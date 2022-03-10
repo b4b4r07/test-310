@@ -20,6 +20,8 @@ jobs:
         modified: 'true'
       id: objects
     - name: Run conftest
-      uses: instrumenta/conftest-action@master
+      uses: YubicoLabs/action-conftest@v2
       with:
         files: ${{ steps.objects.outputs.changed }}
+        policy: ./policy
+        all-namespaces: true

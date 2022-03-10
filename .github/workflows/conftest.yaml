@@ -24,7 +24,7 @@ jobs:
       if: steps.objects.outputs.changed
       with:
         files: ${{ steps.objects.outputs.changed }}
-        # policy: 'policy'
+        policy: 'policy'
         all-namespaces: true
         log-level: trace
       id: conftest

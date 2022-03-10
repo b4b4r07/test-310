@@ -23,7 +23,6 @@ jobs:
       uses: b4b4r07/action-conftest@master
       if: steps.objects.outputs.changed
       with:
-        path: 'kubernetes'
         files: ${{ steps.objects.outputs.changed }}
         policy: 'policy'
         all-namespaces: true

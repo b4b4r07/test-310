@@ -20,11 +20,12 @@ jobs:
         modified: 'true'
       id: objects
     - name: Run conftest test against changed files
-      uses: b4b4r07/action-conftest@master
+      uses: b4b4r07/action-conftest@feature/all-into-one
       if: steps.objects.outputs.changed
       with:
         files: ${{ steps.objects.outputs.changed }}
         policy: 'policy'
+        matches: 'kubernetes/* *.yaml'
         all_namespaces: true
       id: conftest
     - name: Post conftest command result to GitHub comment

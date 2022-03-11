@@ -1,3 +1,0 @@
-package kubernetes.cronjob
-
-
